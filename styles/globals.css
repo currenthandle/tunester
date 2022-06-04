@@ -4,10 +4,17 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    height: 100vh;
+  }
   .section-title {
     @apply font-bold pb-3 text-2xl;
   }
   .section {
-    @apply p-40;
+    @apply py-6;
+  }
+
+  .discog-box {
+    @apply bg-white p-3 flex content-center flex-col;
   }
 }

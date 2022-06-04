@@ -1,5 +1,5 @@
 import Banner from '../components/Banner';
-import { Container } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import KeyMetrics from '../components/KeyMetrics';
 import Discography from '../components/Discography';
 import Followers from '../components/Followers';
@@ -34,18 +34,26 @@ export default function artist() {
   console.log('state', artist);
 
   return (
-    <Container className='w-[100vw]'>
-      <Banner name={artist?.name} />
-      <Container className='m-0 p-0 bg-[#F5F5F5] h-full'>
-        <KeyMetrics
-          primarySales={artist?.primary_sales}
-          secondarySales={artist?.secondary_sales}
-          uniqueCollectors={artist?.unique_collectors}
-        />
-        <Discography />
-        <Followers />
-        <Listenership />
-      </Container>
-    </Container>
+    <Grid className='w-[100vw] h-full p-0'>
+      <Grid item xs={12}>
+        <Container className='m-0 xl:!max-w-full p-0'>
+          <span> Hello</span>
+          <span> Hello</span>
+          <span> Hello</span>
+          <span> Hello</span>
+          <Banner name={artist?.name} />
+          <Container className='m-0 p-0 bg-[#F5F5F5] h-full'>
+            <KeyMetrics
+              primarySales={artist?.primary_sales}
+              secondarySales={artist?.secondary_sales}
+              uniqueCollectors={artist?.unique_collectors}
+            />
+            <Discography />
+            <Followers />
+            <Listenership />
+          </Container>
+        </Container>
+      </Grid>
+    </Grid>
   );
 }

@@ -1,34 +1,16 @@
 import { Card, Grid, Container } from '@mui/material';
+import Item from './DataItem';
 
 export default function Listenership() {
+  const width = 3;
   return (
     <Container className='section'>
       <h2 className='section-title'>Listenership</h2>
       <Grid container spacing={2}>
-        <Grid item xs={3}>
-          <Card>
-            <h3>Total Monthly Listeners</h3>
-            <p>###</p>
-          </Card>
-        </Grid>
-        <Grid item xs={3}>
-          <Card>
-            <h3>Audius Monthly Listeners</h3>
-            <p>###</p>
-          </Card>
-        </Grid>
-        <Grid item xs={3}>
-          <Card>
-            <h3>Spotify Monthly Listeners</h3>
-            <p>###</p>
-          </Card>
-        </Grid>
-        <Grid item xs={3}>
-          <Card>
-            <h3>Apple Music Monthly Listeners</h3>
-            <p>###</p>
-          </Card>
-        </Grid>
+        <Item title='Total Monthly Listeners' data={'50k'} width={width} />
+        <Item title='Audius Monthly Listeners' data={'50k'} width={width} />
+        <Item title='Spotify Monthly Listeners' data={'50k'} width={width} />
+        <Item title='Apple Monthly Listeners' data={'50k'} width={width} />
       </Grid>
     </Container>
   );
