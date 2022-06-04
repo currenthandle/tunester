@@ -12,21 +12,18 @@ export default function artist() {
   const [artist, setArtist] = useState(null);
 
   useEffect(() => {
-    const id = 'Artist:d35489e0-dcb3-40dd-8bc7-5b0586bfa5e8';
     console.log('initializing artist', artist);
 
     const callLoadArtist = async (id) => {
-      const artist = await loadArtist(id);
-      console.log('artist', artist);
-      return artist;
-    };
-    if (artist) {
-      console.log('artist', artist);
-    } else {
-      callLoadArtist(id);
+      const data = await loadArtist(id);
+      //console.log('artist', artist);
+      const artist = data.tunester_sound_xyz_stats[0];
+      //return artist;
       setArtist(artist);
-      console.log('artist not loaded');
-    }
+    };
+
+    const id = 'Artist:d35489e0-dcb3-40dd-8bc7-5b0586bfa5e8';
+    callLoadArtist(id);
 
     const callLoadArtists = async () => {
       const artists = await loadArtists();
