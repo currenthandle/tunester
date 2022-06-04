@@ -11,10 +11,10 @@ export default function Home() {
 
   useEffect(() => {
     if (isAuthenticated) router.replace('/dashboard');
-  }, [isAuthenticated, router]);
+  }, [isAuthenticated]);
 
   return (
-    <div className='h-screen w-screen flex items-center justify-center'>
+    <div className='h-screen w-screen flex items-center justify-center bg-slate-300'>
       <Head>
         <title>Moralis IO tutorial</title>
         <meta name='description' content='A basic tutorial of Moralis IO' />
