@@ -36,7 +36,7 @@ export default function artist() {
   return (
     <Container className='w-[100vw]'>
       <Banner name={artist?.name} />
-      <Container className='m-0 p-0 bg-[#F5F5F5] h-[100vh]'>
+      <Container className='m-0 p-0 bg-[#F5F5F5] h-full'>
         <KeyMetrics
           primarySales={artist?.primary_sales}
           secondarySales={artist?.secondary_sales}

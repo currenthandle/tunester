@@ -2,8 +2,8 @@ import { Container, Grid, Card, Typography, Box } from '@mui/material';
 import Image from 'next/image';
 export default function Discography() {
   return (
-    <Container>
-      <h2>Discography</h2>
+    <Container className='section'>
+      <h2 className='section-title'>Discography</h2>
       <Grid container spacing={2}>
         <Grid item xs={2}>
           <Box>

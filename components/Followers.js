@@ -1,8 +1,8 @@
 import { Card, Container, Grid } from '@mui/material';
 export default function Followers() {
   return (
-    <Container>
-      <h2>Followers</h2>
+    <Container className='section'>
+      <h2 className='section-title'>Followers</h2>
       <Grid container spacing={2}>
         <Grid item xs={2}>
           <Card>

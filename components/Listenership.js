@@ -2,8 +2,8 @@ import { Card, Grid, Container } from '@mui/material';
 
 export default function Listenership() {
   return (
-    <Container>
-      <h2>Listenership</h2>
+    <Container className='section'>
+      <h2 className='section-title'>Listenership</h2>
       <Grid container spacing={2}>
         <Grid item xs={3}>
           <Card>

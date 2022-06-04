@@ -5,7 +5,7 @@ export default function KeyMetric({
   uniqueCollectors,
 }) {
   return (
-    <Container className='py-7'>
+    <Container className='section'>
       <h2 className='section-title'>Key Metrics</h2>
       <p>Across Sound.xyz, Catalog and Mint Songs</p>
       <Grid container spacing={2}>
