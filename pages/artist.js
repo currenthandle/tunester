@@ -34,12 +34,18 @@ export default function artist() {
   console.log('state', artist);
 
   return (
-    <Container maxWidth='md' style={{ height: '30%' }}>
+    <Container className='w-[100vw]'>
       <Banner name={artist?.name} />
-      <KeyMetrics />
-      <Discography />
-      <Followers />
-      <Listenership />
+      <Container className='m-0 p-0 bg-[#F5F5F5] h-[100vh]'>
+        <KeyMetrics
+          primarySales={artist?.primary_sales}
+          secondarySales={artist?.secondary_sales}
+          uniqueCollectors={artist?.unique_collectors}
+        />
+        <Discography />
+        <Followers />
+        <Listenership />
+      </Container>
     </Container>
   );
 }
