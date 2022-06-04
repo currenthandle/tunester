@@ -3,6 +3,7 @@ import { Container } from '@mui/material';
 import KeyMetrics from '../components/KeyMetrics';
 import Discography from '../components/Discography';
 import Followers from '../components/Followers';
+import Listenership from '../components/Listenership';
 
 export default function artist() {
   return (
@@ -11,6 +12,7 @@ export default function artist() {
       <KeyMetrics />
       <Discography />
       <Followers />
+      <Listenership />
     </Container>
   );
 }
