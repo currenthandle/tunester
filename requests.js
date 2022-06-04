@@ -2,9 +2,16 @@ import { ApolloClient, HttpLink, InMemoryCache } from 'apollo-boost';
 import gql from 'graphql-tag';
 
 const endpointURL = 'https://brave-unicorn-25.hasura.app/v1/graphql';
+console.log('secret', process.env.NEXT_PUBLIC_HASURA_SECRET);
 
 const client = new ApolloClient({
-  link: new HttpLink({ uri: endpointURL }),
+  link: new HttpLink({
+    uri: endpointURL,
+    headers: {
+      //Authorization: `Bearer ${process.env.NEXT_PUBLIC_HASURA_API_KEY}`,
+      'X-Hasura-Admin-Secret': process.env.NEXT_PUBLIC_HASURA_SECRET,
+    },
+  }),
   cache: new InMemoryCache(),
 });
 
