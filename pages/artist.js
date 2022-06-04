@@ -6,15 +6,22 @@ import Followers from '../components/Followers';
 import Listenership from '../components/Listenership';
 import { useEffect } from 'react';
 
-import { loadArtist } from '../requests';
+import { loadArtist, loadArtists } from '../requests';
 
 export default function artist() {
   useEffect(() => {
-    const id = 'asdfsa';
+    const id = 'Artist:d35489e0-dcb3-40dd-8bc7-5b0586bfa5e8';
     const callLoadArtist = async (id) => {
-      loadArtist(id);
+      const artist = await loadArtist(id);
+      console.log('artist', artist);
     };
     callLoadArtist(id);
+
+    const callLoadArtists = async () => {
+      const artists = await loadArtists();
+      console.log('artists', artists);
+    };
+    //callLoadArtists();
   });
 
   return (

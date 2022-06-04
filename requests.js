@@ -32,19 +32,53 @@ const artistQuery = gql`
     }
   }
 `;
+const betterArtistQuery = gql`
+  query MyQuery {
+    tunester_sound_xyz_stats(
+      where: { id: { _eq: "Artist:08c270ad-2867-4d90-93f1-d0c8e19ac6f6" } }
+    ) {
+      id
+      index
+      name
+      nfts_sold
+      primary_sales
+      public_address
+      secondary_sales
+      sound_handle
+      total_sales
+      twitter
+      unique_collectors
+    }
+  }
+`;
 
+const betterArtistsQuery = gql`
+  query MyQuery {
+    tunester_sound_xyz_stats {
+      id
+      index
+      name
+      nfts_sold
+      primary_sales
+      public_address
+      secondary_sales
+      sound_handle
+      total_sales
+      twitter
+      unique_collectors
+    }
+  }
+`;
 export async function loadArtists() {
-  const {
-    data: { artists },
-  } = await client.query({ query: artistsQuery });
-  return users;
+  const { data } = await client.query({ query: betterArtistsQuery });
+
+  //console.log('artists from requests', artists);
+  return data;
 }
 
 export async function loadArtist(id) {
-  const {
-    data: { artist },
-  } = await client.query({ query: artistQuery, variables: { id } });
-  return artist;
+  const { data } = await client.query({ query: betterArtistQuery });
+  return data;
 }
 
 /*
