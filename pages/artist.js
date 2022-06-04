@@ -2,6 +2,7 @@ import Banner from '../components/Banner';
 import { Container } from '@mui/material';
 import KeyMetrics from '../components/KeyMetrics';
 import Discography from '../components/Discography';
+import Followers from '../components/Followers';
 
 export default function artist() {
   return (
@@ -9,6 +10,7 @@ export default function artist() {
       <Banner />
       <KeyMetrics />
       <Discography />
+      <Followers />
     </Container>
   );
 }
