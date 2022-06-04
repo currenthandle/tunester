@@ -36,11 +36,7 @@ export default function artist() {
   return (
     <Grid className='w-[100vw] h-full p-0'>
       <Grid item xs={12}>
-        <Container className='m-0 xl:!max-w-full p-0'>
-          <span> Hello</span>
-          <span> Hello</span>
-          <span> Hello</span>
-          <span> Hello</span>
+        <Container className='m-0 p-0'>
           <Banner name={artist?.name} />
           <Container className='m-0 p-0 bg-[#F5F5F5] h-full'>
             <KeyMetrics
