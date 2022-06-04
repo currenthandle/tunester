@@ -33,21 +33,12 @@ export async function loadArtists() {
   return users;
 }
 
-export async function loadArtist() {
+export async function loadArtist(id) {
   const {
     data: { artist },
   } = await client.query({ query: artistQuery, variables: { id } });
   return artist;
 }
-
-/*
-export async function loadJob(id) {
-  const {
-    data: { job },
-  } = await client.query({ query: jobQuery, variables: { id } });
-  return job;
-}
-*/
 
 /*
 import {
