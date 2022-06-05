@@ -16,13 +16,13 @@ import {
 import ArtistPageMainSection from '../components/ArtistPageMainSection';
 import ArtistPageSideBar from '../components/ArtistPageSideBar';
 
-export default function artist({ artist }) {
+export default function artist({ artist, topCollectors }) {
   //console.log('artist', artist);
   return (
     <Container className='w-[100vw] h-full p-0 m-0'>
       <Banner name={artist?.name} imgUrl={artist?.image} />
       <Grid container className='w-[100vw] h-full p-0 m-0'>
-        <ArtistPageMainSection artist={artist} />
+        <ArtistPageMainSection artist={artist} topCollectors={topCollectors} />
         <ArtistPageSideBar artist={artist} />
       </Grid>
     </Container>
@@ -32,7 +32,8 @@ export default function artist({ artist }) {
 export async function getStaticProps() {
   const data = await loadArtist();
   const artist = data.tunester_sound_xyz_stats[0];
-  const topCollectors = await getTopCollectors(artist.id);
+  const { tunester_sound_xyz_transfers_agg: topCollectors } =
+    await getTopCollectors(artist.id);
   console.log('topCollectors', topCollectors);
   artist.twitter = {
     handle: artist.twitter,
@@ -43,6 +44,7 @@ export async function getStaticProps() {
   return {
     props: {
       artist,
+      topCollectors,
     },
   };
 }

@@ -78,14 +78,17 @@ const topTenCollectorsQuery = gql`
   query TopTenCollectors {
     tunester_sound_xyz_transfers_agg(
       order_by: { unique_nfts: desc, artist_id: asc }
-      where: { artist_id: { _eq: "10" } }
+      where: { name: { _eq: "Snoop Dogg" } }
       limit: 10
     ) {
       owners
       unique_nfts
+      total_spend
+      platform
     }
   }
 `;
+
 export async function getTopCollectors(artistId) {
   const { data } = await client.query({
     query: topTenCollectorsQuery,
