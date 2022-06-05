@@ -7,12 +7,12 @@ import Listenership from '../components/Listenership';
 import { useEffect, useState } from 'react';
 //import { Link } from 'next';
 
-import { loadArtist, loadArtists } from '../requests';
+import { loadArtist, loadArtists, loadTwitterFollowers } from '../requests';
 import ArtistPageMainSection from '../components/ArtistPageMainSection';
 import ArtistPageSideBar from '../components/ArtistPageSideBar';
 
 export default function artist({ artist }) {
-  console.log('artist', artist);
+  //console.log('artist', artist);
   return (
     <Container className='w-[100vw] h-full p-0 m-0'>
       <Banner name={artist?.name} imgUrl={artist?.image} />
@@ -27,6 +27,11 @@ export default function artist({ artist }) {
 export async function getStaticProps() {
   const data = await loadArtist();
   const artist = data.tunester_sound_xyz_stats[0];
+
+  artist.twitter = {
+    handle: artist.twitter,
+    followers: artist['twt_followers'],
+  };
 
   return {
     props: {

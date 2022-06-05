@@ -8,7 +8,7 @@ export default function ArtistPageSideBar({ artist }) {
       <Container className='section border-b border-[#DADADA]'>
         <h2 className='section-title pt-4'>Artist Breakdown</h2>
       </Container>
-      <Followers />
+      <Followers twitter={artist.twitter} />
       <Listenership />
     </Grid>
   );

@@ -48,6 +48,7 @@ const betterArtistQuery = gql`
       twitter
       drops
       unique_collectors
+      twt_followers
       image
     }
   }
@@ -66,6 +67,7 @@ const betterArtistsQuery = gql`
       sound_handle
       total_sales
       twitter
+      twt_followers
       unique_collectors
       drops
     }
@@ -79,6 +81,24 @@ export async function loadArtists() {
 
 export async function loadArtist(id) {
   const { data } = await client.query({ query: betterArtistQuery });
+  return data;
+}
+
+const twitterFollowersQuery = gql`
+  query TwitterFollowers($handle: String!) {
+    tunester_twitter_follower_count(where: { twitter: { _eq: $handle } }) {
+      follower_count
+      twitter
+    }
+  }
+`;
+
+export async function loadTwitterFollowers(handle) {
+  const { data } = await client.query({
+    query: twitterFollowersQuery,
+    variables: { handle },
+  });
+
   return data;
 }
 
