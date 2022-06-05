@@ -17,4 +17,7 @@
   .discog-box {
     @apply bg-white p-3 flex content-center flex-col;
   }
+  @media (min-width: 1200px) .css-1oqqzyl-MuiContainer-root {
+    max-width: none !important;
+  }
 }

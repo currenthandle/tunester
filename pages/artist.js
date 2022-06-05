@@ -36,9 +36,9 @@ export default function artist() {
   return (
     <Grid className='w-[100vw] h-full p-0'>
       <Grid item xs={12}>
-        <Container className='m-0 p-0 !max-w-none'>
+        <div id='tester' className='m-0 p-0'>
           <Banner name={artist?.name} />
-          <Container className='m-0 p-0 bg-[#F5F5F5] h-full'>
+          <Container className='m-0 p-0 bg-[#F5F5F5] h-full max-w-none'>
             <KeyMetrics
               primarySales={artist?.primary_sales}
               secondarySales={artist?.secondary_sales}
@@ -48,7 +48,7 @@ export default function artist() {
             <Followers />
             <Listenership />
           </Container>
-        </Container>
+        </div>
       </Grid>
     </Grid>
   );
