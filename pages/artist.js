@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 //import { Link } from 'next';
 
 import { loadArtist, loadArtists } from '../requests';
+import ArtistPageMainSection from '../components/ArtistPageMainSection';
 
 export default function artist() {
   const [artist, setArtist] = useState(null);
@@ -39,16 +40,7 @@ const drops = {
     <Container className='w-[100vw] h-full p-0 m-0'>
       <Banner name={artist?.name} />
       <Grid container className='w-[100vw] h-full p-0 m-0'>
-        <Grid item id='tester' className='m-0 p-0 max-w-none' xs={9}>
-          <Container className='m-0 p-0 bg-[#EEEFF2] h-full max-w-none'>
-            <KeyMetrics
-              primarySales={artist?.primary_sales}
-              secondarySales={artist?.secondary_sales}
-              uniqueCollectors={artist?.unique_collectors}
-            />
-            <Discography drops={artist?.drops} />
-          </Container>
-        </Grid>
+        <ArtistPageMainSection artist={artist} />
         <Grid item xs={3} className='bg-[#EEEFF2] border-l border-[#dadada]'>
           <Container className='section border-b border-[#DADADA]'>
             <h2 className='section-title pt-4'>Artist Breakdown</h2>
