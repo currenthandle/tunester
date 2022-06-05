@@ -10,7 +10,6 @@ export default function Followers({ twitter }) {
     }
     return followers;
   };
-  console.log('twitter', twitter?.follower_count);
   return (
     <Container className='section'>
       <h2 className='section-title'>Followers</h2>
