@@ -1,7 +1,6 @@
 import { Container, Grid, Card, Typography, Box } from '@mui/material';
 import DiscoItem from './DiscoItem';
 export default function Discography({ drops }) {
-  console.log('drops', drops);
   return (
     <Container className='section'>
       <h2 className='section-title'>Discography</h2>

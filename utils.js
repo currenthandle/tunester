@@ -6,3 +6,5 @@ export const parseFollowers = (followers) => {
   }
   return followers;
 };
+
+export const fLCapital = (s) => s.replace(/./, (c) => c.toUpperCase());

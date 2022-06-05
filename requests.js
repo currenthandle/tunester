@@ -81,7 +81,7 @@ const dropsQuery = gql`
     tunester_new_drops(
       where: { genre: { _eq: $genre } }
       order_by: { date: desc }
-      limit: 6
+      limit: 4
     ) {
       id
       artistId
