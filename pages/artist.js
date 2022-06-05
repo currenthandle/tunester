@@ -12,32 +12,6 @@ import ArtistPageMainSection from '../components/ArtistPageMainSection';
 import ArtistPageSideBar from '../components/ArtistPageSideBar';
 
 export default function artist({ artist }) {
-  /*
-  const [artist, setArtist] = useState(null);
-
-  /
-  useEffect(() => {
-    const callLoadArtist = async (id) => {
-      const data = await loadArtist(id);
-      const artist = data.tunester_sound_xyz_stats[0];
-      //return artist;
-      setArtist(artist);
-    };
-
-    const id = 'Artist:d35489e0-dcb3-40dd-8bc7-5b0586bfa5e8';
-    callLoadArtist(id);
-
-    const callLoadArtists = async () => {
-      const artists = await loadArtists();
-      console.log('allArtists', artists);
-    };
-    callLoadArtists();
-  }, [artist]);
-  /*
-const drops = {
-  JSON.parse(artist?.drop)
-};
-*/
   console.log('artist', artist?.drops);
   return (
     <Container className='w-[100vw] h-full p-0 m-0'>
@@ -51,13 +25,9 @@ const drops = {
 }
 
 export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
   const data = await loadArtist();
   const artist = data.tunester_sound_xyz_stats[0];
 
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
   return {
     props: {
       artist,
