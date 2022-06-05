@@ -40,7 +40,7 @@ export default function TopTenCollectors() {
               <TableCell className='border-none' align='right'>
                 Carbs
               </TableCell>
-              <TableCell className='border-none' align='right'>
+              <TableCell className='border-none rounded-r-lg' align='right'>
                 Protein
               </TableCell>
             </TableRow>
