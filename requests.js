@@ -121,7 +121,6 @@ export async function loadArtists() {
 }
 
 export async function loadArtist(id) {
-  //console.log('id', id);
   const { data } = await client.query({
     query: artistQuery,
     variables: { artistId: id },

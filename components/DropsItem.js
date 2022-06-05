@@ -1,7 +1,6 @@
 import { Container, Grid, Card, Typography, Box, Link } from '@mui/material';
 import Image from 'next/image';
 export default function DropsItem({ drop }) {
-  //console.log('DROP ITEM', drop);
   return (
     <Grid item xs={2}>
       <Link href={`/artist/${drop?.id.slice(7)}`}>

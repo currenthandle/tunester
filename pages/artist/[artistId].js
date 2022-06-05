@@ -19,7 +19,6 @@ import ArtistPageSideBar from '../../components/ArtistPageSideBar';
 import { loadDrops } from '../../requests';
 
 export default function artist({ artist, topCollectors }) {
-  //console.log(aIrtist);
   return (
     <Container className='w-[100vw] h-full p-0 m-0'>
       <Banner name={artist?.name} imgUrl={artist?.image} />
@@ -33,10 +32,7 @@ export default function artist({ artist, topCollectors }) {
 
 export async function getStaticProps(context) {
   const { artistId } = context.params;
-  //console.log('context.params', context.params);
-  //const data = await loadArtist(artistId)}
   const data = await loadArtist(`Artist:${artistId}`);
-  //console.log('data', data);
   const artist = data.tunester_sound_xyz_stats[0];
 
   const { tunester_sound_xyz_transfers_agg: topCollectors } =
@@ -57,7 +53,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       artist,
-      //topCollectors,
+      topCollectors,
     },
   };
 }
@@ -65,7 +61,6 @@ export async function getStaticPaths() {
   const data = await loadDrops();
 
   const paths = data.map((drop) => {
-    //console.log(drop);
     return {
       params: {
         artistId: `${drop?.id.slice(7)}`,

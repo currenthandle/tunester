@@ -1,7 +1,6 @@
 import { Container, Grid, Card, Typography, Box } from '@mui/material';
 import Image from 'next/image';
 export default function DiscoItem({ drop }) {
-  console.log('Disco drop', drop);
   return (
     <Grid item xs={2}>
       <Box className='bg-white p-3 flex flex-col rounded-md'>
