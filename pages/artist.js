@@ -34,8 +34,11 @@ export default function artist() {
   console.log('state', artist);
 
   return (
-    <Grid className='w-[100vw] h-full p-0'>
-      <Grid item xs={12}>
+    <Grid container className='w-[100vw] h-full p-0'>
+      <Grid item xs={2}>
+        <div>test</div>
+      </Grid>
+      <Grid item xs={10}>
         <Container id='tester' className='m-0 p-0 max-w-none'>
           <Banner name={artist?.name} />
           <Container className='m-0 p-0 bg-[#F5F5F5] h-full max-w-none'>
