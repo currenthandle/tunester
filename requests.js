@@ -32,7 +32,7 @@ const artistQuery = gql`
   }
 `;
 const betterArtistQuery = gql`
-  query MyQuery {
+  query ArtistQuery {
     tunester_sound_xyz_stats(
       where: { id: { _eq: "Artist:d35489e0-dcb3-40dd-8bc7-5b0586bfa5e8" } }
     ) {
@@ -73,6 +73,26 @@ const betterArtistsQuery = gql`
     }
   }
 `;
+
+const topTenCollectorsQuery = gql`
+  query TopTenCollectors {
+    tunester_sound_xyz_transfers_agg(
+      order_by: { unique_nfts: desc, artist_id: asc }
+      where: { artist_id: { _eq: "10" } }
+      limit: 10
+    ) {
+      owners
+      unique_nfts
+    }
+  }
+`;
+export async function getTopCollectors(artistId) {
+  const { data } = await client.query({
+    query: topTenCollectorsQuery,
+  });
+  return data;
+}
+
 export async function loadArtists() {
   const { data } = await client.query({ query: betterArtistsQuery });
 

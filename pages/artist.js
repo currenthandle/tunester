@@ -7,7 +7,12 @@ import Listenership from '../components/Listenership';
 import { useEffect, useState } from 'react';
 //import { Link } from 'next';
 
-import { loadArtist, loadArtists, loadTwitterFollowers } from '../requests';
+import {
+  loadArtist,
+  loadArtists,
+  loadTwitterFollowers,
+  getTopCollectors,
+} from '../requests';
 import ArtistPageMainSection from '../components/ArtistPageMainSection';
 import ArtistPageSideBar from '../components/ArtistPageSideBar';
 
@@ -27,10 +32,12 @@ export default function artist({ artist }) {
 export async function getStaticProps() {
   const data = await loadArtist();
   const artist = data.tunester_sound_xyz_stats[0];
-
+  const topCollectors = await getTopCollectors(artist.id);
+  console.log('topCollectors', topCollectors);
   artist.twitter = {
     handle: artist.twitter,
     followers: artist['twt_followers'],
+    topCollectors,
   };
 
   return {
