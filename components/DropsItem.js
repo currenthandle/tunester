@@ -1,10 +1,10 @@
 import { Container, Grid, Card, Typography, Box, Link } from '@mui/material';
 import Image from 'next/image';
 export default function DropsItem({ drop }) {
-  console.log(drop);
+  console.log(drop.artistId);
   return (
     <Grid item xs={2}>
-      <Link href='/artist'>
+      <Link href={`/artist/${drop.artistId}`}>
         <Box className='bg-white p-3 flex flex-col rounded-md'>
           <div className='flex justify-center'>
             <Box className='bg-[#0D6EBB] flex content-center	p-1.5 rounded-md bg-opacity-20'>

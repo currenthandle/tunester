@@ -15,14 +15,6 @@ const client = new ApolloClient({
 });
 
 const artistQuery = gql`
-  query ArtistQuery($id: ID!) {
-    artist(id: $id) {
-      id
-      name
-    }
-  }
-`;
-const betterArtistQuery = gql`
   query ArtistQuery {
     tunester_sound_xyz_stats(
       where: { id: { _eq: "Artist:d35489e0-dcb3-40dd-8bc7-5b0586bfa5e8" } }
@@ -130,7 +122,7 @@ export async function loadArtists() {
 }
 
 export async function loadArtist(id) {
-  const { data } = await client.query({ query: betterArtistQuery });
+  const { data } = await client.query({ query: artistQuery });
   return data;
 }
 

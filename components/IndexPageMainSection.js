@@ -1,7 +1,5 @@
 import { Container, Grid } from '@mui/material';
-import artist from '../pages/artist';
-import KeyMetrics from './KeyMetrics';
-import TopTenCollectors from './TopTenCollectors';
+//import artist from '../pages/artist/[artistId]';
 import DropsSlider from './DropsRow';
 
 export default function IndexPageMainSection({ drops }) {
