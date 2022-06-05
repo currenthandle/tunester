@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 
 import { loadArtist, loadArtists } from '../requests';
 import ArtistPageMainSection from '../components/ArtistPageMainSection';
+import ArtistPageSideBar from '../components/ArtistPageSideBar';
 
 export default function artist() {
   const [artist, setArtist] = useState(null);
@@ -41,13 +42,7 @@ const drops = {
       <Banner name={artist?.name} />
       <Grid container className='w-[100vw] h-full p-0 m-0'>
         <ArtistPageMainSection artist={artist} />
-        <Grid item xs={3} className='bg-[#EEEFF2] border-l border-[#dadada]'>
-          <Container className='section border-b border-[#DADADA]'>
-            <h2 className='section-title pt-4'>Artist Breakdown</h2>
-          </Container>
-          <Followers />
-          <Listenership />
-        </Grid>
+        <ArtistPageSideBar artist={artist} />
       </Grid>
     </Container>
   );
