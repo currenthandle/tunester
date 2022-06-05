@@ -9,7 +9,7 @@ export default function ArtistPageSideBar({ artist }) {
         <h2 className='section-title pt-4'>Artist Breakdown</h2>
       </Container>
       <Followers twitter={artist.twitter} />
-      <Listenership />
+      <Listenership spotify={artist.spotify} />
     </Grid>
   );
 }

@@ -17,7 +17,6 @@ import ArtistPageMainSection from '../components/ArtistPageMainSection';
 import ArtistPageSideBar from '../components/ArtistPageSideBar';
 
 export default function artist({ artist, topCollectors }) {
-  //console.log('artist', artist);
   return (
     <Container className='w-[100vw] h-full p-0 m-0'>
       <Banner name={artist?.name} imgUrl={artist?.image} />
@@ -34,11 +33,15 @@ export async function getStaticProps() {
   const artist = data.tunester_sound_xyz_stats[0];
   const { tunester_sound_xyz_transfers_agg: topCollectors } =
     await getTopCollectors(artist.id);
-  console.log('topCollectors', topCollectors);
+
   artist.twitter = {
     handle: artist.twitter,
     followers: artist['twt_followers'],
     topCollectors,
+  };
+  artist.spotify = {
+    followers: artist['spotify_foreign_key']['spotify_followers'],
+    popularity: artist['spotify_foreign_key']['popularity'],
   };
 
   return {

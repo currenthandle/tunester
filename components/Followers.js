@@ -1,15 +1,9 @@
 import { Card, Container, Grid } from '@mui/material';
+import { parseFollowers } from '../utils';
 import Item from './DataItem';
 export default function Followers({ twitter }) {
   const width = 3;
-  const parseFollowers = (followers) => {
-    if (followers > 1000000) {
-      return `${(followers / 1000000).toFixed(1)}M`;
-    } else if (followers > 1000) {
-      return `${(followers / 1000).toFixed(1)}K`;
-    }
-    return followers;
-  };
+
   return (
     <Container className='section'>
       <h2 className='section-title'>Followers</h2>

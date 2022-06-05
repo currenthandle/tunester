@@ -50,6 +50,11 @@ const betterArtistQuery = gql`
       unique_collectors
       twt_followers
       image
+      spotify_foreign_key {
+        genre
+        popularity
+        spotify_followers
+      }
     }
   }
 `;
