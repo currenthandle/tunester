@@ -1,5 +1,4 @@
 import { Container, Grid, Card, Typography, Box } from '@mui/material';
-import Image from 'next/image';
 import DiscoItem from './DiscoItem';
 export default function Discography({ drops }) {
   //console.log(drops);

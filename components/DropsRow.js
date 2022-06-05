@@ -1,5 +1,4 @@
 import { Container, Grid, Card, Typography, Box, Link } from '@mui/material';
-import Image from 'next/image';
 import DropsItem from './DropsItem';
 export default function DropsSlider({ drops }) {
   return (
