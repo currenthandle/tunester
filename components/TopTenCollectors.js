@@ -9,6 +9,7 @@ import {
   TableHead,
   Box,
 } from '@mui/material';
+
 export default function TopTenCollectors({ topCollectors }) {
   function createData(name, calories, fat, carbs, protein) {
     return { name, calories, fat, carbs, protein };

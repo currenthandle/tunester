@@ -14,15 +14,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const artistsQuery = gql`
-  query ArtistsQuery {
-    users {
-      id
-      username
-    }
-  }
-`;
-
 const artistQuery = gql`
   query ArtistQuery($id: ID!) {
     artist(id: $id) {
@@ -59,8 +50,8 @@ const betterArtistQuery = gql`
   }
 `;
 
-const betterArtistsQuery = gql`
-  query MyQuery {
+const artistsQuery = gql`
+  query ArtistsQuery {
     tunester_sound_xyz_stats {
       id
       index
@@ -75,6 +66,8 @@ const betterArtistsQuery = gql`
       twt_followers
       unique_collectors
       drops
+      image
+      genre
     }
   }
 `;
@@ -93,6 +86,33 @@ const topTenCollectorsQuery = gql`
     }
   }
 `;
+const dropsQuery = gql`
+  query DropsQuery {
+    tunester_new_drops(
+      where: { genre: { _eq: "rap" } }
+      order_by: { date: desc }
+    ) {
+      artistId
+      date
+      genre
+      image
+      index
+      name
+      numSold
+      platform
+      quantity
+      soundHandle
+    }
+  }
+`;
+
+export async function loadDrops(genre) {
+  const { data } = await client.query({
+    query: dropsQuery,
+    //variables: { genre },
+  });
+  return data.tunester_new_drops;
+}
 
 export async function getTopCollectors(artistId) {
   const { data } = await client.query({
@@ -102,7 +122,7 @@ export async function getTopCollectors(artistId) {
 }
 
 export async function loadArtists() {
-  const { data } = await client.query({ query: betterArtistsQuery });
+  const { data } = await client.query({ query: artistsQuery });
 
   return data;
 }
