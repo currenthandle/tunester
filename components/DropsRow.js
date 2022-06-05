@@ -6,7 +6,7 @@ export default function DropsSlider({ drops, genre }) {
       <h2 className='section-title'>{genre}</h2>
       <Grid container spacing={2}>
         {drops?.map((drop) => (
-          <DropsItem key={drop.artistId + drop.name} drop={drop} />
+          <DropsItem key={drop.image + Math.random()} drop={drop} />
         ))}
       </Grid>
     </Container>
