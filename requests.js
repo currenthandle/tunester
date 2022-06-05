@@ -95,6 +95,10 @@ const dropsQuery = gql`
       quantity
       soundHandle
       image
+      artist_name_image_relation {
+        name
+        image
+      }
     }
   }
 `;

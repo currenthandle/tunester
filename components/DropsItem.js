@@ -7,12 +7,19 @@ export default function DropsItem({ drop }) {
         <Box className='bg-white p-3 flex flex-col rounded-md'>
           <div className='flex justify-center'>
             <Box className='bg-[#0D6EBB] flex content-center	p-1.5 rounded-md bg-opacity-20'>
-              <Image alt='album' src={drop?.image} height={200} width={200} />
+              <Image
+                alt='album'
+                src={drop['artist_name_image_relation']?.image}
+                height={200}
+                width={200}
+              />
             </Box>
           </div>
           <Box className='px-4'>
             {console.log('drop', drop)}
-            <h3 className='text-black font-bold pt-4'>{drop.name}</h3>
+            <h3 className='text-black font-bold pt-4'>
+              {drop['artist_name_image_relation'].name}
+            </h3>
             <p className='text-black text-md pt-2'>{drop.platform}</p>
             {/*}
             <p className='text-black text-lq py-2'>{drop.date}</p>

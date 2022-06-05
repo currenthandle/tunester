@@ -3,6 +3,7 @@ import { fLCapital } from '../utils';
 import DropsItem from './DropsItem';
 
 export default function DropsSlider({ drops, genre }) {
+  console.log(drops);
   return (
     <Container className='section' id={genre}>
       <h2 className='section-title'>{fLCapital(genre)}</h2>
