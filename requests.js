@@ -2,7 +2,6 @@ import { ApolloClient, HttpLink, InMemoryCache } from 'apollo-boost';
 import gql from 'graphql-tag';
 
 const endpointURL = 'https://brave-unicorn-25.hasura.app/v1/graphql';
-console.log('secret', process.env.NEXT_PUBLIC_HASURA_SECRET);
 
 const client = new ApolloClient({
   link: new HttpLink({
@@ -48,6 +47,7 @@ const betterArtistQuery = gql`
       total_sales
       twitter
       unique_collectors
+      drops
     }
   }
 `;
@@ -72,7 +72,6 @@ const betterArtistsQuery = gql`
 export async function loadArtists() {
   const { data } = await client.query({ query: betterArtistsQuery });
 
-  //console.log('artists from requests', artists);
   return data;
 }
 

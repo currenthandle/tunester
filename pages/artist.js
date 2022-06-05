@@ -13,11 +13,8 @@ export default function artist() {
   const [artist, setArtist] = useState(null);
 
   useEffect(() => {
-    console.log('initializing artist', artist);
-
     const callLoadArtist = async (id) => {
       const data = await loadArtist(id);
-      //console.log('artist', artist);
       const artist = data.tunester_sound_xyz_stats[0];
       //return artist;
       setArtist(artist);
@@ -28,18 +25,15 @@ export default function artist() {
 
     const callLoadArtists = async () => {
       const artists = await loadArtists();
-      console.log('artists', artists);
     };
     //callLoadArtists();
   }, [artist]);
-  console.log('state', artist);
 
   return (
-    <Grid container className='w-[100vw] h-full p-0'>
-      <Grid item xs={2}></Grid>
-      <Grid item xs={10}>
-        <Container id='tester' className='m-0 p-0 max-w-none'>
-          <Banner name={artist?.name} />
+    <Container className='w-[100vw] h-full p-0 m-0'>
+      <Banner name={artist?.name} />
+      <Grid container className='w-[100vw] h-full p-0 m-0'>
+        <Grid item id='tester' className='m-0 p-0 max-w-none' xs={9}>
           <Container className='m-0 p-0 bg-[#F5F5F5] h-full max-w-none'>
             <KeyMetrics
               primarySales={artist?.primary_sales}
@@ -50,8 +44,9 @@ export default function artist() {
             <Followers />
             <Listenership />
           </Container>
-        </Container>
+        </Grid>
+        <Grid item xs={3}></Grid>
       </Grid>
-    </Grid>
+    </Container>
   );
 }
