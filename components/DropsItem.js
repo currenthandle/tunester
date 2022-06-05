@@ -16,11 +16,10 @@ export default function DropsItem({ drop }) {
             </Box>
           </div>
           <Box className='px-4'>
-            {console.log('drop', drop)}
-            <h3 className='text-black font-bold pt-4'>
+            <h3 className='text-black font-bold pt-4 text-[20px]'>
               {drop['artist_name_image_relation'].name}
             </h3>
-            <p className='text-black text-md pt-2'>{drop.platform}</p>
+            <p className='text-black text-[16px] pt-2'>{drop.platform}</p>
             {/*}
             <p className='text-black text-lq py-2'>{drop.date}</p>
             {*/}

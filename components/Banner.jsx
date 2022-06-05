@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { fLCapital } from '../utils';
 
 export default function Banner({ name, imgUrl }) {
+  const url = name ? imgUrl : '/discover_page_header.svg';
   return (
     <Container className='h-[20vh] relative m-0 max-w-none w-[100vw]'>
       {name ? (
@@ -10,13 +11,11 @@ export default function Banner({ name, imgUrl }) {
           {fLCapital(name)}
         </h1>
       ) : (
-        <Container className='flex flex-col justify-center'>
-          <Card className='bg-white z-10 relative max-w-fit p-3 bg-opacity-40'>
-            <div className='text-4xl font-bold'>Discover</div>
-          </Card>
-        </Container>
+        <h1 className='shadow absolute text-2xl font-bold lg:text-7xl bottom-5 left-7 z-10 text-white'>
+          Discover
+        </h1>
       )}
-      <Image src={imgUrl} alt='nirvana' layout='fill' objectFit='cover' />
+      <Image src={url} alt='nirvana' layout='fill' objectFit='cover' />
     </Container>
   );
 }

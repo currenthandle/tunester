@@ -26,6 +26,7 @@ export async function getStaticProps() {
   const rap = await loadDrops('rap');
   const electronic = await loadDrops('electronic');
 
+  console.log(rAndB);
   return {
     props: {
       drops: {
