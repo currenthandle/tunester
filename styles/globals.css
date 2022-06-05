@@ -18,7 +18,7 @@
     @apply bg-white p-3 flex content-center flex-col;
   }
 
-  .shadow {
+  .text-shadow-custom {
     text-shadow: 2px 2px 4px #000;
   }
 }
