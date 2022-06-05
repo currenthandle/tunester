@@ -33,14 +33,15 @@ export default function artist({ artist, topCollectors }) {
 export async function getStaticProps(context) {
   const { artistId } = context.params;
   console.log('context.params', context.params);
-  //const data = await loadArtist(artistId);
-  const data = await loadArtist('Artist:d35489e0-dcb3-40dd-8bc7-5b0586bfa5e8');
+  //const data = await loadArtist(artistId)}
+  const data = await loadArtist(`Artist:${artistId}`);
   console.log('data', data);
   const artist = data.tunester_sound_xyz_stats[0];
+  /*
   const { tunester_sound_xyz_transfers_agg: topCollectors } =
-    await getTopCollectors(artist.id);
+    await getTopCollectors(artist?.id);
 
-  if (artist.twitter) {
+  if (artist?.twitter) {
     artist.twitter = {
       handle: artist.twitter,
       followers: artist['twt_followers'],
@@ -51,11 +52,12 @@ export async function getStaticProps(context) {
     followers: artist['spotify_foreign_key']['spotify_followers'],
     popularity: artist['spotify_foreign_key']['popularity'],
   };
+  */
 
   return {
     props: {
       artist,
-      topCollectors,
+      //topCollectors,
     },
   };
 }
