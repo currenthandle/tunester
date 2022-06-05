@@ -11,7 +11,7 @@ export default function Followers({ twitter }) {
         <Item title='Instagram' data={'50k'} width={width} />
         <Item
           title='Twitter'
-          data={parseFollowers(twitter.followers)}
+          data={parseFollowers(twitter?.followers)}
           width={width}
         />
         <Item title='TikTok' data={'50k'} width={width} />

@@ -16,7 +16,9 @@ export default function Banner({ name, imgUrl }) {
           </Card>
         </Container>
       )}
+      {/*}
       <Image src={imgUrl} alt='nirvana' layout='fill' objectFit='cover' />
+      {*/}
     </Container>
   );
 }

@@ -63,13 +63,13 @@ export async function getStaticPaths() {
   const data = await loadDrops();
 
   const paths = data.map((drop) => {
+    console.log(drop);
     return {
       params: {
-        artistId: `${drop.artistId}`,
+        artistId: `${drop?.id.slice(7)}`,
       },
     };
   });
-  //console.log(data);
   return {
     paths,
     fallback: true, // false or 'blocking'

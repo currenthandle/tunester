@@ -8,8 +8,8 @@ export default function ArtistPageSideBar({ artist }) {
       <Container className='section border-b border-[#DADADA]'>
         <h2 className='section-title pt-4'>Artist Breakdown</h2>
       </Container>
-      <Followers twitter={artist.twitter} />
-      <Listenership spotify={artist.spotify} />
+      <Followers twitter={artist?.twitter} />
+      <Listenership spotify={artist?.spotify} />
     </Grid>
   );
 }
