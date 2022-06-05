@@ -12,7 +12,7 @@ export default function Banner({ name, imgUrl }) {
       ) : (
         <Container className='flex flex-col justify-center'>
           <Card className='bg-white z-10 relative max-w-fit p-3 bg-opacity-40'>
-            <Image src='/tunester.svg' alt='Tunster' width={500} height={100} />
+            <div className='text-4xl font-bold'>Discover</div>
           </Card>
         </Container>
       )}
