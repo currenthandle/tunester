@@ -15,7 +15,10 @@ export default function Banner({ name, imgUrl }) {
           Discover
         </h1>
       )}
-      <Image src={url} alt='nirvana' layout='fill' objectFit='cover' />
+      <Image src={url} alt='banner' layout='fill' objectFit='cover' />
+      {/*}
+      <Image src='/logo.png' alt='logo' layout='fill' width={10} height={5} />
+      {*/}
     </Container>
   );
 }
