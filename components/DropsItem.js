@@ -1,14 +1,14 @@
 import { Container, Grid, Card, Typography, Box, Link } from '@mui/material';
 import Image from 'next/image';
 export default function DropsItem({ drop }) {
-  //console.log(drop.artistId);
+  //console.log('DROP ITEM', drop);
   return (
     <Grid item xs={2}>
-      <Link href={`/artist/${drop.id.slice(7)}`}>
+      <Link href={`/artist/${drop?.id.slice(7)}`}>
         <Box className='bg-white p-3 flex flex-col rounded-md'>
           <div className='flex justify-center'>
             <Box className='bg-[#0D6EBB] flex content-center	p-1.5 rounded-md bg-opacity-20'>
-              <Image alt='album' src={drop.image} height={200} width={200} />
+              <Image alt='album' src={drop?.image} height={200} width={200} />
             </Box>
           </div>
           <Box>

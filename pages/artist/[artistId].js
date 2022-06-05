@@ -19,7 +19,7 @@ import ArtistPageSideBar from '../../components/ArtistPageSideBar';
 import { loadDrops } from '../../requests';
 
 export default function artist({ artist, topCollectors }) {
-  console.log(artist);
+  //console.log(aIrtist);
   return (
     <Container className='w-[100vw] h-full p-0 m-0'>
       <Banner name={artist?.name} imgUrl={artist?.image} />
