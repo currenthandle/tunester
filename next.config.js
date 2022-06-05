@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['hotfm.ng', 'images.prismic.io'],
+    domains: ['hotfm.ng', 'images.prismic.io', 'soundxyz.mypinata.cloud'],
   },
 };
 

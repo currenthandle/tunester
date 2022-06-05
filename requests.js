@@ -34,7 +34,7 @@ const artistQuery = gql`
 const betterArtistQuery = gql`
   query MyQuery {
     tunester_sound_xyz_stats(
-      where: { id: { _eq: "Artist:08c270ad-2867-4d90-93f1-d0c8e19ac6f6" } }
+      where: { id: { _eq: "Artist:d35489e0-dcb3-40dd-8bc7-5b0586bfa5e8" } }
     ) {
       id
       index
@@ -46,8 +46,8 @@ const betterArtistQuery = gql`
       sound_handle
       total_sales
       twitter
-      unique_collectors
       drops
+      unique_collectors
     }
   }
 `;
@@ -66,6 +66,7 @@ const betterArtistsQuery = gql`
       total_sales
       twitter
       unique_collectors
+      drops
     }
   }
 `;

@@ -25,10 +25,16 @@ export default function artist() {
 
     const callLoadArtists = async () => {
       const artists = await loadArtists();
+      console.log('allArtists', artists);
     };
-    //callLoadArtists();
+    callLoadArtists();
   }, [artist]);
-
+  /*
+const drops = {
+  JSON.parse(artist?.drop)
+};
+*/
+  console.log('artist', artist?.drops);
   return (
     <Container className='w-[100vw] h-full p-0 m-0'>
       <Banner name={artist?.name} />
@@ -40,7 +46,7 @@ export default function artist() {
               secondarySales={artist?.secondary_sales}
               uniqueCollectors={artist?.unique_collectors}
             />
-            <Discography />
+            <Discography drops={artist?.drops} />
             <Followers />
             <Listenership />
           </Container>

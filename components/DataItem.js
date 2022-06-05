@@ -1,7 +1,6 @@
 import { Card, Grid } from '@mui/material';
 
 export default function DataItem({ title, data, width }) {
-  console.log('width', width);
   return (
     <Grid item xs={width}>
       <Card className='py-2 px-3.5'>

@@ -7,7 +7,7 @@ export default function KeyMetric({
 }) {
   const width = 3;
   return (
-    <Container className='section'>
+    <Container className='section' id='key-metrics'>
       <h2 className='section-title'>Key Metrics</h2>
       <p className='text-[#8F8F8F] mb-3.5'>
         Across Sound.xyz, Catalog and Mint Songs
