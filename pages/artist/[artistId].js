@@ -37,7 +37,7 @@ export async function getStaticProps(context) {
   const data = await loadArtist(`Artist:${artistId}`);
   console.log('data', data);
   const artist = data.tunester_sound_xyz_stats[0];
-  /*
+
   const { tunester_sound_xyz_transfers_agg: topCollectors } =
     await getTopCollectors(artist?.id);
 
@@ -52,7 +52,6 @@ export async function getStaticProps(context) {
     followers: artist['spotify_foreign_key']['spotify_followers'],
     popularity: artist['spotify_foreign_key']['popularity'],
   };
-  */
 
   return {
     props: {
