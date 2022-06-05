@@ -11,9 +11,11 @@ import { loadArtist, loadArtists } from '../requests';
 import ArtistPageMainSection from '../components/ArtistPageMainSection';
 import ArtistPageSideBar from '../components/ArtistPageSideBar';
 
-export default function artist() {
+export default function artist({ artist }) {
+  /*
   const [artist, setArtist] = useState(null);
 
+  /
   useEffect(() => {
     const callLoadArtist = async (id) => {
       const data = await loadArtist(id);
@@ -46,4 +48,19 @@ const drops = {
       </Grid>
     </Container>
   );
+}
+
+export async function getStaticProps() {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+  const data = await loadArtist();
+  const artist = data.tunester_sound_xyz_stats[0];
+
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      artist,
+    },
+  };
 }
