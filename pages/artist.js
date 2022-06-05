@@ -1,10 +1,11 @@
 import Banner from '../components/Banner';
-import { Container, Grid } from '@mui/material';
+import { Container, Grid, List, ListItem } from '@mui/material';
 import KeyMetrics from '../components/KeyMetrics';
 import Discography from '../components/Discography';
 import Followers from '../components/Followers';
 import Listenership from '../components/Listenership';
 import { useEffect, useState } from 'react';
+//import { Link } from 'next';
 
 import { loadArtist, loadArtists } from '../requests';
 
@@ -35,9 +36,7 @@ export default function artist() {
 
   return (
     <Grid container className='w-[100vw] h-full p-0'>
-      <Grid item xs={2}>
-        <div>test</div>
-      </Grid>
+      <Grid item xs={2}></Grid>
       <Grid item xs={10}>
         <Container id='tester' className='m-0 p-0 max-w-none'>
           <Banner name={artist?.name} />
