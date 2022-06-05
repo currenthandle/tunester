@@ -77,9 +77,9 @@ const topTenCollectorsQuery = gql`
   }
 `;
 const dropsQuery = gql`
-  query DropsQuery {
+  query DropsQuery($genre: String!) {
     tunester_new_drops(
-      where: { genre: { _eq: "rap" } }
+      where: { genre: { _eq: $genre } }
       order_by: { date: desc }
       limit: 6
     ) {
@@ -102,7 +102,7 @@ const dropsQuery = gql`
 export async function loadDrops(genre) {
   const { data } = await client.query({
     query: dropsQuery,
-    //variables: { genre },
+    variables: { genre },
   });
   return data.tunester_new_drops;
 }

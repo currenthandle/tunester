@@ -58,7 +58,7 @@ export async function getStaticProps(context) {
   };
 }
 export async function getStaticPaths() {
-  const data = await loadDrops();
+  const data = await loadDrops('pop');
 
   const paths = data.map((drop) => {
     return {
