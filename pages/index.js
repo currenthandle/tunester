@@ -1,33 +1,14 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '../styles/Home.module.css';
-import { useMoralis } from 'react-moralis';
-import { useRouter } from 'next/router';
+//import styles from '../styles/Home.module.css';
 import { useEffect } from 'react';
+import Banner from '../components/Banner';
 
 export default function Home() {
-  const { isAuthenticated, authenticate } = useMoralis();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (isAuthenticated) router.replace('/dashboard');
-  }, [isAuthenticated]);
-
   return (
-    <div className='h-screen w-screen flex items-center justify-center bg-slate-300'>
-      <Head>
-        <title>Moralis IO tutorial</title>
-        <meta name='description' content='A basic tutorial of Moralis IO' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-      <button
-        className='px-7 py-4 text-xl rounded-xl bg-yellow-300 animate-pulse'
-        onClick={() =>
-          authenticate({ signingMessage: 'Authorize linking of your wallet' })
-        }
-      >
-        Login using Metamask
-      </button>
+    <div className='h-screen w-screen'>
+      <Head></Head>
+      <Banner imgUrl='https://d2i9ybouka0ieh.cloudfront.net/user-uploads/1ccc9ff4-931d-4bda-8693-643a7330bea4/AVATAR_IMAGE/1318966-oshimakesmusic.jpeg' />
     </div>
   );
 }
