@@ -91,6 +91,7 @@ const dropsQuery = gql`
     tunester_new_drops(
       where: { genre: { _eq: "rap" } }
       order_by: { date: desc }
+      limit: 6
     ) {
       artistId
       date
@@ -102,6 +103,7 @@ const dropsQuery = gql`
       platform
       quantity
       soundHandle
+      image
     }
   }
 `;

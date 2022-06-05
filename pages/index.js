@@ -23,6 +23,7 @@ export default function Home({ drops }) {
 export async function getStaticProps() {
   const data = await loadDrops();
 
+  //console.log(data);
   return {
     props: {
       drops: data,
