@@ -48,6 +48,7 @@ const betterArtistQuery = gql`
       twitter
       drops
       unique_collectors
+      image
     }
   }
 `;

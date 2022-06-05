@@ -12,10 +12,10 @@ import ArtistPageMainSection from '../components/ArtistPageMainSection';
 import ArtistPageSideBar from '../components/ArtistPageSideBar';
 
 export default function artist({ artist }) {
-  console.log('artist', artist?.drops);
+  console.log('artist', artist);
   return (
     <Container className='w-[100vw] h-full p-0 m-0'>
-      <Banner name={artist?.name} />
+      <Banner name={artist?.name} imgUrl={artist?.image} />
       <Grid container className='w-[100vw] h-full p-0 m-0'>
         <ArtistPageMainSection artist={artist} />
         <ArtistPageSideBar artist={artist} />
