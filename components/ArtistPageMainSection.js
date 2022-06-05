@@ -1,6 +1,7 @@
 import { Container, Grid } from '@mui/material';
 import Discography from './Discography';
 import KeyMetrics from './KeyMetrics';
+import TopTenCollectors from './TopTenCollectors';
 
 export default function ArtistPageMainSection({ artist }) {
   return (
@@ -12,6 +13,7 @@ export default function ArtistPageMainSection({ artist }) {
           uniqueCollectors={artist?.unique_collectors}
         />
         <Discography drops={artist?.drops} />
+        <TopTenCollectors />
       </Container>
     </Grid>
   );
