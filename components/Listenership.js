@@ -2,7 +2,7 @@ import { Card, Grid, Container } from '@mui/material';
 import Item from './DataItem';
 
 export default function Listenership() {
-  const width = 3;
+  const width = 6;
   return (
     <Container className='section'>
       <h2 className='section-title'>Listenership</h2>

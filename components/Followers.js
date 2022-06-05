@@ -1,7 +1,7 @@
 import { Card, Container, Grid } from '@mui/material';
 import Item from './DataItem';
 export default function Followers() {
-  const width = 2;
+  const width = 3;
   return (
     <Container className='section'>
       <h2 className='section-title'>Followers</h2>

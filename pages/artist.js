@@ -40,18 +40,22 @@ const drops = {
       <Banner name={artist?.name} />
       <Grid container className='w-[100vw] h-full p-0 m-0'>
         <Grid item id='tester' className='m-0 p-0 max-w-none' xs={9}>
-          <Container className='m-0 p-0 bg-[#F5F5F5] h-full max-w-none'>
+          <Container className='m-0 p-0 bg-[#EEEFF2] h-full max-w-none'>
             <KeyMetrics
               primarySales={artist?.primary_sales}
               secondarySales={artist?.secondary_sales}
               uniqueCollectors={artist?.unique_collectors}
             />
             <Discography drops={artist?.drops} />
-            <Followers />
-            <Listenership />
           </Container>
         </Grid>
-        <Grid item xs={3}></Grid>
+        <Grid item xs={3} className='bg-[#EEEFF2] border-l border-[#dadada]'>
+          <Container className='section border-b border-[#DADADA]'>
+            <h2 className='section-title pt-4'>Artist Breakdown</h2>
+          </Container>
+          <Followers />
+          <Listenership />
+        </Grid>
       </Grid>
     </Container>
   );
