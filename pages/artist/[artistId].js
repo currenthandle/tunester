@@ -17,6 +17,7 @@ import {
 import ArtistPageMainSection from '../../components/ArtistPageMainSection';
 import ArtistPageSideBar from '../../components/ArtistPageSideBar';
 import { loadDrops } from '../../requests';
+import { data } from 'autoprefixer';
 
 export default function artist({ artist, topCollectors }) {
   return (
@@ -58,7 +59,12 @@ export async function getStaticProps(context) {
   };
 }
 export async function getStaticPaths() {
-  const data = await loadDrops('pop');
+  const pop = await loadDrops('pop');
+  const rAndB = await loadDrops('r&b');
+  const rap = await loadDrops('rap');
+  const electronic = await loadDrops('electronic');
+
+  const data = pop.concat(rAndB, rap, electronic);
 
   const paths = data.map((drop) => {
     return {

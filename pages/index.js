@@ -21,11 +21,19 @@ export default function Home({ drops }) {
 }
 
 export async function getStaticProps() {
-  const rap = await loadDrops('pop');
+  const pop = await loadDrops('pop');
+  const rAndB = await loadDrops('r&b');
+  const rap = await loadDrops('rap');
+  const electronic = await loadDrops('electronic');
 
   return {
     props: {
-      drops: rap,
+      drops: {
+        pop,
+        rAndB,
+        rap,
+        electronic,
+      },
     },
   };
 }
